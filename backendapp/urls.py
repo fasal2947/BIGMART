@@ -1,0 +1,30 @@
+from django.urls import path
+from backendapp import views
+urlpatterns = [
+    path('indexpage/', views.indexpage, name="indexpage"),
+    path('addadminpage/', views.addadminpage, name="addadminpage"),
+    path('saveaddadmin/', views.saveaddadmin, name="saveaddadmin"),
+    path('Displayaddadmin/', views.Displayaddadmin, name="Displayaddadmin"),
+    path('Editaddadmin/<int:dataid>/', views.Editaddadmin, name="Editaddadmin"),
+    path('Updateaddadmindata/<int:dataid>/', views.Updateaddadmindata, name="Updateaddadmindata"),
+    path('deleteaddadmindata/<int:dataid>/', views.deleteaddadmindata, name="deleteaddadmindata"),
+    path('addcategorypage/', views.addcategorypage, name="addcategorypage"),
+    path('savecategorypage/', views.savecategorypage, name="savecategorypage"),
+    path('displaycategory/', views.displaycategory, name="displaycategory"),
+    path('Editcategorypage/', views.Editcategorypage, name="Editcategorypage"),
+    path('Editcategorypage/<int:dataid>/', views.Editcategorypage, name="Editcategorypage"),
+    path('Updatecategorypage/<int:dataid>/', views.Updatecategorypage, name="Updatecategorypage"),
+    path('Deletecategory/<int:dataid>/', views.Deletecategory, name="Deletecategory"),
+    path('productpage/', views.productpage, name="productpage"),
+    path('productsavepage/', views.productsavepage, name="productsavepage"),
+    path('DisplayProduct/', views.DisplayProduct, name="DisplayProduct"),
+    path('editproductpage/<int:dataid>/', views.editproductpage, name="editproductpage"),
+    path('updateproductdata/<int:dataid>/', views.updateproductdata, name="updateproductdata"),
+    path('Deleteproduct/<int:dataid>/', views.Deleteproduct, name="Deleteproduct"),
+    path('loginpage/', views.loginpage, name="loginpage"),
+    path('adminlogin/', views.adminlogin, name="adminlogin"),
+    path('logout/', views.logout, name="logout"),
+    path('displaycontc/', views.displaycontc, name="displaycontc"),
+    path('displaycontctdelete/<int:dataid>/', views.displaycontctdelete, name="displaycontctdelete"),
+
+]

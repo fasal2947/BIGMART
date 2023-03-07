@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+                  <div class="card-body">
+                    <h4 class="card-title">Basic Table</h4>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Subject</th>
+                            <th>Message</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        {% for d in data %}
+                        <tr>
+                            <td>{{ d.Name }}</td>
+                            <td>{{ d.Email }}</td>
+                            <td>{{ d.Subject }}</td>
+                            <td>{{ d.Message }}</td>
+
+                            <td>
+                                <form action="{% url 'displaycontctdelete' dataid=d.id %}">
+                                <button type="submit" class="btn btn-success">Delete</button>
+                                </form>
+                            </td>
+
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+                  <div class="card-body">
+                    <h4 class="card-title">Basic form elements</h4>
+                    <p class="card-description"> Basic form elements </p>
+                    <form class="forms-sample" method="post" action="{% url 'updateproductdata' dataid=datas.id %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                      <div class="form-group">
+                        <label for="exampleInputName1">Name</label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="name" value="{{ datas.Name }}">
+                      </div>
+                   <div class="form-group">
+                        <label for="exampleInputName1">Prize</label>
+                        <input type="text" class="form-control" id="exampleInputName" placeholder="Name" name="prize" value="{{ datas.Prize }}">
+                      </div>
+                       <div class="form-group">
+                        <label for="exampleInputName1">Quantity(Kg)</label>
+                        <input type="text" class="form-control" id="exampleInputName2" placeholder="Name" name="quantity" value="{{ datas.Quantity }}">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleSelectGender">Category</label>
+                        <select class="form-control" id="exampleSelectGender" name="category" value="{{ datas.Category }}">
+                          <option>select</option>
+                            {% for d in da  %}
+                          <option>{{ d.Name }}</option>
+                            {% endfor %}
+                        </select>
+                      </div>
+                       <div class="form-group">
+                        <label for="exampleInputName1">Description</label>
+                        <input type="text" class="form-control" id="exampleInputName3" placeholder="Name" name="description" value="{{ datas.Description }}">
+                      </div>
+                        <div>
+                            <img src="{{datas.Image.url}}" width="100px" height="70px">
+                            <input type="file" name="image">
+                        </div>
+
+                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                      <button class="btn btn-dark">Cancel</button>
+                    </form>
+                  </div>
+</body>
+</html>
+{% endblock %}
